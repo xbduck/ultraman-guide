@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奥特曼图鉴 | ULTRAMAN ENCYCLOPEDIA</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 粒子背景 -->
+    <canvas id="particles"></canvas>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <span class="logo-icon">⟐</span>
+            <span class="logo-text">ULTRAMAN</span>
+            <span class="logo-sub">图鉴</span>
+        </div>
+        <div class="nav-links">
+            <a href="#hero">首页</a>
+            <a href="#characters">图鉴</a>
+            <a href="#timeline">编年</a>
+            <a href="#about">关于</a>
+        </div>
+        <div class="nav-search">
+            <input type="text" id="searchInput" placeholder="搜索奥特曼..." />
+            <button id="searchBtn">🔍</button>
+        </div>
+    </nav>
+
+    <!-- 英雄区 -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">SINCE 1966</div>
+            <h1 class="hero-title">
+                <span class="title-line">光之巨人</span>
+                <span class="title-line accent">奥特曼图鉴</span>
+            </h1>
+            <p class="hero-desc">跨越半个世纪的光之传奇，守护宇宙和平的超级英雄。从初代奥特曼到新生代战士，探索每一位光之巨人的故事。</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-num" data-target="58">0</span>
+                    <span class="stat-label">年历史</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num" data-target="50">0</span>
+                    <span class="stat-label">位战士</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num" data-target="1200">0</span>
+                    <span class="stat-label">+ 怪兽</span>
+                </div>
+            </div>
+            <a href="#characters" class="hero-btn">
+                <span>探索图鉴</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            </a>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-glow"></div>
+            <div class="hero-ring ring-1"></div>
+            <div class="hero-ring ring-2"></div>
+            <div class="hero-ring ring-3"></div>
+        </div>
+    </section>
+
+    <!-- 筛选栏 -->
+    <section class="filter-bar">
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">全部</button>
+            <button class="filter-btn" data-filter="showa">昭和系</button>
+            <button class="filter-btn" data-filter="heisei">平成系</button>
+            <button class="filter-btn" data-filter="reiwa">令和系</button>
+            <button class="filter-btn" data-filter="new-gen">新生代</button>
+        </div>
+    </section>
+
+    <!-- 角色图鉴 -->
+    <section id="characters" class="characters">
+        <div class="section-header">
+            <span class="section-tag">ENCYCLOPEDIA</span>
+            <h2 class="section-title">光之战士图鉴</h2>
+            <p class="section-desc">点击卡片查看详细信息，了解每一位奥特曼的能力与故事</p>
+        </div>
+        <div class="card-grid" id="cardGrid">
+            <!-- 由 JS 动态生成 -->
+        </div>
+    </section>
+
+    <!-- 时间线 -->
+    <section id="timeline" class="timeline-section">
+        <div class="section-header">
+            <span class="section-tag">CHRONICLE</span>
+            <h2 class="section-title">奥特曼编年史</h2>
+            <p class="section-desc">从1966年至今，光之传奇从未停歇</p>
+        </div>
+        <div class="timeline" id="timelineContainer">
+            <!-- 由 JS 动态生成 -->
+        </div>
+    </section>
+
+    <!-- 关于 -->
+    <section id="about" class="about">
+        <div class="section-header">
+            <span class="section-tag">ABOUT</span>
+            <h2 class="section-title">关于奥特曼</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-card">
+                <div class="about-icon">🌍</div>
+                <h3>光之国</h3>
+                <p>M78星云光之国，是奥特曼们的故乡。这个位于M78星云的行星上，住着数以万计的光之巨人，他们守护着宇宙的和平。</p>
+            </div>
+            <div class="about-card">
+                <div class="about-icon">⚡</div>
+                <h3>能量之源</h3>
+                <p>等离子火花塔是光之国的能量核心，它的光之能量赋予了光之国居民超凡的力量，使他们变身为巨大的光之战士。</p>
+            </div>
+            <div class="about-card">
+                <div class="about-icon">🛡️</div>
+                <h3>宇宙警备队</h3>
+                <p>由奥特之父领导的宇宙警备队，是维护全宇宙和平的组织。各奥特曼战士被派遣到不同星系，保护弱小文明免受侵略。</p>
+            </div>
+            <div class="about-card">
+                <div class="about-icon">💫</div>
+                <h3>变身机制</h3>
+                <p>奥特曼通过变身器与人间体合二为一，在地球上以人类形态活动，当危险来临时变身为光之巨人，但活动时间受限。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-icon">⟐</span>
+                <span>ULTRAMAN ENCYCLOPEDIA</span>
+            </div>
+            <p class="footer-note">本网站为粉丝创作，仅供学习交流使用。奥特曼系列版权归圆谷制作株式会社所有。</p>
+            <p class="footer-copy">© 2024 奥特曼图鉴 | Fan-made Encyclopedia</p>
+        </div>
+    </footer>
+
+    <!-- 详情模态框 -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="modal">
+            <button class="modal-close" id="modalClose">✕</button>
+            <div class="modal-header" id="modalHeader">
+                <div class="modal-color-bar"></div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-avatar" id="modalAvatar"></div>
+                <h2 class="modal-name" id="modalName"></h2>
+                <div class="modal-subtitle" id="modalSubtitle"></div>
+                <div class="modal-info-grid" id="modalInfoGrid"></div>
+                <div class="modal-section">
+                    <h3>角色简介</h3>
+                    <p id="modalDesc"></p>
+                </div>
+                <div class="modal-section">
+                    <h3>必杀技</h3>
+                    <div class="skill-tags" id="modalSkills"></div>
+                </div>
+                <div class="modal-section">
+                    <h3>能力雷达</h3>
+                    <div class="radar-chart-container">
+                        <canvas id="radarChart" width="300" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
